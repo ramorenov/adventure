@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="exporter-version" content="Evernote Mac 7.14 (458244)"/><meta name="author" content="ricardomorenoviasus@gmail.com"/><meta name="created" content="2020-09-29 20:00:45 +0000"/><meta name="source" content="desktop.mac"/><meta name="updated" content="2020-10-01 03:11:20 +0000"/><title>Taller en clase audio Adventure Game Unity</title></head><body>
+<div><img src="Taller%20en%20clase%20audio%20Adventure%20Game%20Unity.html.resources/81CEB009-0E79-4B71-B2B8-416B0C0E24B3.jpg" height="459" width="785"/><br/></div>
+<div><br/></div>
+<div><a href="https://learn.unity.com/project/adventure-game-tutorial">https://learn.unity.com/project/adventure-game-tutorial</a></div>
+<div><br/></div>
+<div>Este proyecto de videojuego es de tipo (Point and click) significa que toda su interacción se realiza a través el mouse y requiere hacer click en distintas zonas para moverse e interactuar con los objetos.  involucra dos escenas a través de las cuales se deben recolectar algunos objetos para guardarlos en un inventario.</div>
+<div><br/></div>
+<div>Para sonorizar el videojuego primero crearemos un nuevo proyecto 3D en Unity y realizamos la importación del archivo  <span style="font-weight: bold;">adventureunity.package  </span>en la carpeta de assets.</div>
+<div><br/></div>
+<div><br/></div>
+<div><img src="Taller%20en%20clase%20audio%20Adventure%20Game%20Unity.html.resources/F252A10C-C5B1-487D-A8C5-1A6F98DCC14D.png" height="266" width="582"/><br/></div>
+<div><br/></div>
+<div>Verificamos que todos los elementos estén seleccionados (All)   y damos click en import.</div>
+<div><img src="Taller%20en%20clase%20audio%20Adventure%20Game%20Unity.html.resources/7FF3626F-C5FB-404A-9541-681369F0BC96.png" height="398" width="447"/><br/></div>
+<div><br/></div>
+<div>Una vez que se han importado todos los elementos, vamos a la carpeta de escenas donde encontraremos las escenas “Market”, “Security Room” y “Persistent”, esta ultima es la escena principal que se encarga de manejar y cambiar entre las otras dos.  Por lo tanto damos doble click para que cargue todos sus elementos en la jerarquía y luego ejecutamos dando play.</div>
+<div><br/></div>
+<div><img src="Taller%20en%20clase%20audio%20Adventure%20Game%20Unity.html.resources/6CB0C4BA-3EDF-41FC-9B68-A8A067238602.png" height="852" width="1064"/><br/></div>
+<div><br/></div>
+<div>Si al ejecutar aparece el mensaje de error "Scene 'SecurityRoom' couldn't be loaded because it has not been added to the build settings or the AssetBundle has not been loaded”.  Debemos primero añadir las escenas en el menú build settings de Unity.</div>
+<div><br/></div>
+<div><img src="Taller%20en%20clase%20audio%20Adventure%20Game%20Unity.html.resources/226A9407-8927-4DE6-BC14-D236276B876C.png" height="848" width="1471"/><br/></div>
+<div><br/></div>
+<div>Luego de arrastrar las escenas “market" y "security Room" podemos cerrar la ventana de Buid Settings y volver a ejecutar la escena “persistent”, ahora se deberá ejecutar sin errores como se ve en la siguiente imagen.</div>
+<div><br/></div>
+<div><img src="Taller%20en%20clase%20audio%20Adventure%20Game%20Unity.html.resources/6378DA58-FDB7-4454-9018-79F197833CDA.png" height="852" width="1047"/><br/></div>
+<div><br/></div>
+<div>Para tener un mejor rendimiento y liberar recursos del equipo podemos reducir el detalle gráfico de la escena en el menú Project Settings,  se desplegara una ventana donde tenemos los diferentes ajustes de calidad de la escena, podemos bajarlo a Low o Very Low.     Verifique que la opción quede seleccionada y marcada con la casilla de verificación en verde.</div>
+<div><br/></div>
+<div><img src="Taller%20en%20clase%20audio%20Adventure%20Game%20Unity.html.resources/F05A4E43-9087-4D19-9C85-04C3F7314727.png" height="553" width="1323"/> </div>
+<div><br/></div>
+<div><span style="font-weight: bold;">Sonorizando el proyecto:</span></div>
+<div><br/></div>
+<div>Crearemos un Folder llamado “Soundbank” en la carpeta de assets para colocar todos los archivos de audio que usara el proyecto, y dentro de este podemos crear subfolder para cada categoría, principalmente Efectos (FX), Ambientes (BG), Musica (MX) y Dialogos (DX)</div>
+<div><br/></div>
+<div><img src="Taller%20en%20clase%20audio%20Adventure%20Game%20Unity.html.resources/63EB2210-0AAA-45DE-82EE-8AF06BD80700.png" height="848" width="1042"/><br/></div>
+<div><br/></div>
+<div><br/></div>
+<div>EFECTOS SONOROS DEL PROYECTO:</div>
+<div><br/></div>
+<div>Footsteps:  Para añadir los pasos al personaje usaremos una técnica diferente a la trabajada anteriormente en clase, para este caso usaremos la animación del personaje cuando camina y definiremos dos eventos que funcionaran como triggers con cada paso del personaje. Para realizar dicha configuración nos dirigimos a la siguiente ruta: </div>
+<div><br/></div>
+<div>Assets/Animations/Player/Walk</div>
+<div><br/></div>
+<div>En el inspector se mostrara la animación de caminado.</div>
+<div><br/></div>
+<div><img src="Taller%20en%20clase%20audio%20Adventure%20Game%20Unity.html.resources/2020-09-30_19-33-36%20(1).gif" height="360" width="640"/><br/></div>
+<div><br/></div>
+<div>Luego en el inspector de la animación buscamos la sección de Events y desplegamos sus opciones,   aparecerá una especie de linea de tiempo que estará sincronizada con el cursor de la animación.    </div>
+<div><br/></div>
+<ol>
+<li>
+<div>Con la animación detenida, movemos el cursor  hasta que el personaje de el primer paso, aproximadamente en 0:33 segundos.  Luego damos click en el botón debajo de Events</div>
+</li>
+<li>
+<div>En el campo denominado Function, colocamos el nombre “Step” que corresponde al  nombre de la función que será ejecutada desde el script de pasos. Luego damos click en el botón Apply.</div>
+</li>
+<li>
+<div>Repetimos el mismo proceso para el segundo paso que da el personaje aproximadamente en 0.85 segundos.</div>
+</li>
+</ol>
+<div><br/></div>
+<div><img src="Taller%20en%20clase%20audio%20Adventure%20Game%20Unity.html.resources/CEEFAC97-A21B-4A34-8745-B4F20D25BAA5.png" height="797" width="438"/><img src="Taller%20en%20clase%20audio%20Adventure%20Game%20Unity.html.resources/151B3187-AB76-43B6-930C-BC5BF438C62E.png" height="802" width="432"/><img src="Taller%20en%20clase%20audio%20Adventure%20Game%20Unity.html.resources/F5619A4F-70D1-481E-958A-578DBFB134DF.png" height="802" width="436"/><br/></div>
+<div><br/></div>
+<div><br/></div>
+<div><br/></div>
+<div>Luego procedemos a copiar el script AdventureFootSteps en la carpeta de scripts del proyecto.</div>
+<div><br/></div>
+<div><br/></div>
+<div><a href="Taller%20en%20clase%20audio%20Adventure%20Game%20Unity.html.resources/AdventureFootSteps.cs">AdventureFootSteps.cs</a></div>
+<div><br/></div>
+<div>primero debemos ir a la carpeta de escenas y montar la escena security Room, luego en la jerarquía seleccionamos el objeto player que corresponde al personaje, y en el inspector añadimos un componente de tipo scripts y seleccionamos el script “AdventureFootSteps”.</div>
+<div><br/></div>
+<div><img src="Taller%20en%20clase%20audio%20Adventure%20Game%20Unity.html.resources/BB466334-58E9-4BFD-8D4E-E498C9982EDC.png" height="856" width="1476"/><br/></div>
+<div><br/></div>
+<div>El script contiene la lógica para seleccionar aleatoriamente un audioclip del array según la superficie que pisa el personaje, cada vez que se genera un evento en la animación que se configuro anteriormente.  </div>
+<div><br/></div>
+<div>Para que el script de pasos pueda reproducir los diferentes audio clips de pasos se deberá crear un componente de tipo audiosource y asignarlo en el campo FootAudioSource.</div>
+<div><br/></div>
+<div><br/></div>
+<div><img src="Taller%20en%20clase%20audio%20Adventure%20Game%20Unity.html.resources/2EDBE9A0-EC2A-43B7-87E5-C087AB0A55C4.png" height="452" width="523"/><br/></div>
+<div><br/></div>
+<div><br/></div>
+<div>Previamente hayamos editado las diferentes muestras de pasos, amenos 4 por superficie, copiamos los audio files en la carpeta “soundbank / footsteps  y luego los arrastramos al respectivo array en el script.    Como ejemplo hemos asignado 4 versiones de paso al  array Default Steps,  recordemos que dicho array se ejecutara por defecto para cualquier superficie que no tenga etiqueta, serán los pasos generales del personaje.</div>
+<div><br/></div>
+<div><img src="Taller%20en%20clase%20audio%20Adventure%20Game%20Unity.html.resources/1AA45161-F354-4E4B-B48A-F274AEFA1867.png" height="850" width="1473"/><br/></div>
+<div><br/></div>
+<div><br/></div>
+<div>Para realizar la comprobación volvemos a la carpeta de Scenes y cargamos la escena Persistent,  damos play y luego click sobre la superficie para que el personaje se mueva y la animacion accione los pasos.</div>
+<div><br/></div>
+<div><br/></div>
+<div>Ahora realizaremos la configuración para cambiar el sonido de pasos cuando el personaje este sobre la superficie de la alfombra roja.</div>
+<div><br/></div>
+<div>Para esto prepararemos 4 muestras de paso que copiaremos en la carpteta del banco sonoro y luego asignaremos al array “Carpeta Steps”</div>
+<div><br/></div>
+<div><img src="Taller%20en%20clase%20audio%20Adventure%20Game%20Unity.html.resources/4700F8E1-0E80-4D23-BAF4-966AC30A39A6.png" height="852" width="1473"/><br/></div>
+<div><br/></div>
+<div>Luego procedemos a seleccionar el objeto Carpet correspondiente a la alfombra roja que se ve en la escena, siguiendo la ruta que se observa en la jerarquía.</div>
+<div>En el inspector del objeto Carpet agregamos un nuevo componente de tipo Physics / Mesh Collider,  este permitirá detectar la colisión del personaje con la superficie.</div>
+<div><br/></div>
+<div><img src="Taller%20en%20clase%20audio%20Adventure%20Game%20Unity.html.resources/DA1D3AC3-9291-43E5-A270-D1CC4A1EB9F5.png" height="848" width="1476"/></div>
+<div><br/></div>
+<div>Por ultimo agregamos a la alfombra, una etiqueta con el nombre “carpet”, esta etiqueta será el elemento que detecta el script para generar el cambio del array de pasos a carpet.</div>
+<div><br/></div>
+<div><img src="Taller%20en%20clase%20audio%20Adventure%20Game%20Unity.html.resources/FCE5CEA4-430A-4A10-95DF-3E1750FCBBA3.png" height="204" width="440"/></div>
+<div><br/></div>
+<div><img src="Taller%20en%20clase%20audio%20Adventure%20Game%20Unity.html.resources/73D70958-EF91-4434-87D1-FCB2404A9388.png" height="184" width="476"/></div>
+<div><br/></div>
+<div><img src="Taller%20en%20clase%20audio%20Adventure%20Game%20Unity.html.resources/85195C54-3479-467A-A87A-6567445C3B24.png" height="216" width="438"/></div>
+<div><br/></div>
+<div><br/></div>
+<div>Para que el personaje actúe como un trigger y accione el cambio de pasos debemos agregar los componentes Rigibody y Capsule Collider al player y configurarlos como se observa en la imagen:  </div>
+<div><br/></div>
+<div><img src="Taller%20en%20clase%20audio%20Adventure%20Game%20Unity.html.resources/599657E7-A99B-4E50-A804-A50F21D931B1.png" height="853" width="1474"/></div>
+<div><br/></div>
+<div><br/></div>
+<div><br/></div>
+<div><br/></div>
+<div>Realizamos la verificación, guardando los cambios en la escena actual y volviendo  a  la escena persistent,  movemos el personaje y debe notarse el cambio en la sonoridad de los pasos al cambiar de superficie.</div>
+<div><br/></div>
+<div><img src="Taller%20en%20clase%20audio%20Adventure%20Game%20Unity.html.resources/2843EBF2-031A-4A7F-B36B-A7972ED2DCB0.png" height="170" width="450"/></div>
+<div><br/></div>
+</body></html>
